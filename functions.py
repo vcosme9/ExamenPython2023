@@ -8,7 +8,7 @@ class Functions:
     def read_data(self):
         cont = 1
         
-        etiquetas = ["type", "fixed acidity", "volatile acidity", "citric acid", "residual sugar", "chlorides", ]
+        etiquetas = ["type", "fixed acidity", "volatile acidity", "citric acid", "residual sugar", "chlorides", "free sulfur dioxide", "total sulfur dioxide", "density", "PH", "sulphates", "alcochol"]
 
         with open('winequality.csv', 'r') as file:
             reader = csv.reader(file)
@@ -16,10 +16,15 @@ class Functions:
             for row in reader:
                 #print(row)
                 dato = f"dato{str(cont)}"
-                self.__dicctionary = {dato}
-                cont += 1
+                #self.__dicctionary = {dato}
+                
                 for item in row:
-                    self.__dicctionary[dato]
+                    cont2 = 0
+                    self.__dicctionary.append({dato: {etiquetas[cont2]: item}})
+                    cont2 += 1
+
+                cont += 1
+                print(self.__dicctionary)
 
                 
 
