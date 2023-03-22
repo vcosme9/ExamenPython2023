@@ -13,18 +13,11 @@ class Functions:
         with open('winequality.csv', 'r') as file:
             reader = csv.reader(file)
 
-            for row in reader:
-                #print(row)
-                dato = f"dato{str(cont)}"
-                #self.__dicctionary = {dato}
+            self.__dicctionary = [{etiqueta:None for etiqueta in etiquetas} for row in reader]
                 
-                for item in row:
-                    cont2 = 0
-                    self.__dicctionary.append({dato: {etiquetas[cont2]: item}})
-                    cont2 += 1
-
-                cont += 1
-                print(self.__dicctionary)
+            
+                   
+            print(self.__dicctionary)
 
                 
 
